@@ -24,6 +24,7 @@
             $form->setEntreprise(cleanInput($_POST['entreprise_contact']));
             $form->setIdType(cleanInput($_POST['id_type_demande']));
             $form->addContact($bdd);
+            $form->email('mathieu.mith@laposte.net', $form->getObjet(), $form->getContenu());
             $msg = "La demande à été envoyé";
         }
         else{
